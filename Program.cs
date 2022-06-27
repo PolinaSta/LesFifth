@@ -135,18 +135,84 @@
 
     // ДОМАШНЕЕ ЗАДАНИЕ
 // 1. Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
-if()
-array[i] % 2 == 0;
-else
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array) 
+// {
+//     for(int i = 0; i<array.Length; i++)
+//     {
+//         Console.Write(array[i] + " / ");
+//     }
+// }
+// void EvenNum(int[] array)
+// {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if(array[i] % 2 == 0)
+//         {
+//             count += 1;
+//         }
+//         // else
+//         // {
+//         //     Console.Write(" -- / ");
+//         // }
+//     }
+// Console.Write("-> " + count);
+// }
+// int[] CreateArray = CreateRandomArray(4, 100, 1000);
+// ShowArray(CreateArray);
+// EvenNum(CreateArray);
+
 
 // 2. Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-i+2
+// i+2
+
+int[] CreateRandomArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+    for (int i = 1; i < size; i++)
+    {
+        array[i] = new Random().Next(min, max);
+    }
+    return array;
+}
+void ShowArray(int[] array) 
+{
+    for(int i = 1; i<array.Length; i++)
+    {
+        Console.Write(array[i] + " / ");
+    }
+}
+void SumNum(int[] array)
+{
+    int sum = 0;
+    int i = 1; 
+    if(i < array.Length)
+    {
+        i=i+2;
+        sum = array[1] + sum;
+    }
+Console.Write(" -> " + sum);
+}
+int[] CreateArray = CreateRandomArray(4, 10, 100);
+ShowArray(CreateArray);
+SumNum(CreateArray);
+
+
 
 // 3. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-double массив
-max
-min
-max-min
+// double массив
+// max
+// min
+// max-min
 
 // Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 // int a = 12;
