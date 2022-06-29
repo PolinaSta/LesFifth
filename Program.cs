@@ -133,7 +133,7 @@
 //         Console.WriteLine ("   4 is absent");
 //     }
 
-    // ДОМАШНЕЕ ЗАДАНИЕ
+// ДОМАШНЕЕ ЗАДАНИЕ
 // 1. Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 // int[] CreateRandomArray(int size, int min, int max)
 // {
@@ -173,61 +173,99 @@
 
 
 // 2. Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-// i+2
-
-int[] CreateRandomArray(int size, int min, int max)
-{
-    int[] array = new int[size];
-    for (int i = 1; i < size; i++)
-    {
-        array[i] = new Random().Next(min, max);
-    }
-    return array;
-}
-void ShowArray(int[] array) 
-{
-    for(int i = 1; i<array.Length; i++)
-    {
-        Console.Write(array[i] + " / ");
-    }
-}
-void SumNum(int[] array)
-{
-    int sum = 0;
-    int i = 1; 
-    if(i < array.Length)
-    {
-        i=i+2;
-        sum = array[1] + sum;
-    }
-Console.Write(" -> " + sum);
-}
-int[] CreateArray = CreateRandomArray(4, 10, 100);
-ShowArray(CreateArray);
-SumNum(CreateArray);
-
+// int[] CreateRandomArray(int size, int min, int max)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(min, max);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array) 
+// {
+//     for(int i = 0; i<array.Length; i++)
+//     {
+//         Console.Write(array[i] + " / ");
+//     }
+// }
+// void SumNum(int[] array)
+// {
+// int sum = 0;
+// int i = 1; 
+//     while(i < array.Length)
+//     {
+//         sum = array[i] + sum;
+//         i=i+2;
+//     }
+// Console.Write(" -> " + sum);
+// }
+// int[] CreateArray = CreateRandomArray(4, -100, 100);
+// ShowArray(CreateArray);
+// SumNum(CreateArray);
 
 
 // 3. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-// double массив
-// max
-// min
-// max-min
+void Main(string[] args) // Метод создания массива с рандомными дробными числами
+{
+    Random x = new Random(); // объявление переменной для генерации чисел
+    int n = 4;
+    double[,] masD = new double[n, n];
 
-// Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
-// int a = 12;
-// int b = 10;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            masD[i, j] = Convert.ToDouble(x.Next(-100, 100) / 10.0); // случайные числа от -10 до 9.9!!!
+    }
+    Console.WriteLine("\nРандомный массив:");
+    for (int i = 0; i < n; i++)
+    {
+        Console.WriteLine();
+        for (int j = 0; j < n; j++)
+            Console.Write("\t" + masD[i, j]);
+    }
+}
+Main(args);
 
-// int max = a;
-// int min = b;
+double NewNum(int[] array){
+    int max = 0;
+    int min = array[0];
+    int res = 0;
+ for(int i = 0; i<array.Length; i++)
+ {
+    if(array[i]>max)
+    {
+        max=array[i];
+    }
+    if(array[i]<min)
+    {
+        min=array[i];
+    }
+ }
+ res=max-min;
+ return res;
+}
+Console.WriteLine(NewNum()); 
+//Понимаю что тут что-то не так. могу прочитать ошибку. 
+// Но как сделать правильно не доходит. И вид метода меняла, не уверена,
+// что метод с созданием массива с дробными числами сработает с этим вариантом.
+// Я в ступоре в общем.((
 
-// if (a > max) max = a;
-// if (b > max) max = b;
-// if (a < min) min = a;
-// if (b < min) min = b;
 
-// Console.Write ("max = ");
-// Console.WriteLine(max);
 
-// Console.Write ("min = ");
-// Console.WriteLine(min);
+
+
+
+//     НЕ СМОГЛА РАЗОБРАТЬСЯ С ЭТИМ КОДОМ ИЗ ИНТЕРНЕТА.
+// void Main(string[] args) // Метод создания массива с рандомными дробными числами
+// {
+//     Random x = new Random(); // объявление переменной для генерации чисел
+//     double [] array = new double [3];
+//     for (int i = 0; i < array.Length; i++)
+//     {array[i]=Convert.ToDouble(Console.Read());}
+// Console.WriteLine(array);
+// }
+// Main(args);
+
+
+
